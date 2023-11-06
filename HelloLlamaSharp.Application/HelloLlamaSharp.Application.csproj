@@ -9,6 +9,12 @@
     <ItemGroup>
       <PackageReference Include="LLamaSharp" Version="0.6.0" />
       <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.6.0" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+      <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts.csproj" />
     </ItemGroup>
 
 </Project>
