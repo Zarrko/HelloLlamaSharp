@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts.csproj" />
       <ProjectReference Include="..\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts.csproj" />
     </ItemGroup>
 
