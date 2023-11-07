@@ -13,7 +13,6 @@ public static class DescribeImageMapping
             {
                 new ImageData
                 {
-                    Id = describeImageRequest.Id,
                     Image = describeImageRequest.Image
                 }
             }

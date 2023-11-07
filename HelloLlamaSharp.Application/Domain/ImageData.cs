@@ -4,9 +4,9 @@ namespace HelloLlamaSharp.Application.Domain;
 
 public class ImageData
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
+    [JsonPropertyName("id")] 
+    public int? Id { get; set; } = 12;
     
-    [JsonPropertyName("image_data")]
+    [JsonPropertyName("data")]
     public string Image { get; set; }
 }

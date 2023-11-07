@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 using HelloLlamaSharp.Application.Domain;
 
@@ -19,8 +20,7 @@ public class LlamaCppClient : ILlamaCppClient
 
         using var httpRequestMessage = new HttpRequestMessage();
         httpRequestMessage.Method = HttpMethod.Post;
-        httpRequestMessage.Content = new StringContent(jsonRequest);
-        httpRequestMessage.Headers.Add("Content-Type", "application/json");
+        httpRequestMessage.Content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
         try
         {

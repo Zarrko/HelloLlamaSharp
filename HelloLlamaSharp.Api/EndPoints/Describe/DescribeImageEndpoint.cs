@@ -22,7 +22,7 @@ public static class DescribeImageEndpoint
                 var response = await describeImageService.DescribeImage(describeImage, cancellationToken);
         
                 var describeImageResponse = new DescribeImageResponse { Description = response };
-                return TypedResults.CreatedAtRoute(value: describeImageResponse);
+                return TypedResults.CreatedAtRoute(value: describeImageResponse, DescribeImageEndpoint.Name, new { id = 12 });
             })
             .WithName(Name)
             .Produces<DescribeImageResponse>(StatusCodes.Status200OK);
