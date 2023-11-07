@@ -9,7 +9,7 @@ namespace HelloLlamaSharp.Api.EndPoints.Describe;
 
 public static class DescribeImageEndpoint
 {
-    public const string Name = "DescribeMovie";
+    public const string Name = "DescribeImage";
 
     public static IEndpointRouteBuilder MapDescribeImage(this IEndpointRouteBuilder app)
     {
