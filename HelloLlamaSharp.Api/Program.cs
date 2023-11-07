@@ -1,15 +1,22 @@
-using HelloLlamaSharp.Application.Clients;
+using System.Net;
+using HelloLlamaSharp.Api.EndPoints;
+using HelloLlamaSharp.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ILlamaCppClient, LlamaCppClient>();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-// ToDo: Use constants class for the client names
-builder.Services.AddHttpClient("LlamaCppApi",client =>
-{
-    client.BaseAddress = new Uri("http://localhost:8080/completion");
-});
+builder.Services.AddApplication();
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+app.UseHttpsRedirection();
+app.MapApiEndpoints();
 
 app.Run();

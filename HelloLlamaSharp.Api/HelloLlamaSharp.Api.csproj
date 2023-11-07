@@ -8,6 +8,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\HelloLlamaSharp.Application\HelloLlamaSharp.Application.csproj" />
+      <ProjectReference Include="..\HelloLlamaSharp.Contracts\HelloLlamaSharp.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
 </Project>
