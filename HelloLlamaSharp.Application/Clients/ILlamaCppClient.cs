@@ -5,5 +5,5 @@ namespace HelloLlamaSharp.Application.Clients;
 
 public interface ILlamaCppClient
 {
-    Task<string> DescribeImage(DescribeImage image, CancellationToken token = default);
+    Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default);
 }

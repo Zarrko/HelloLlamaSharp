@@ -13,9 +13,9 @@ public class DescribeImageService : IDescribeImageService
     }
 
 
-    public Task<string> DescribeImage(DescribeImage image, CancellationToken token = default)
+    public Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
     {
-        var response = _llamaCppClient.DescribeImage(image, token);
+        var response = _llamaCppClient.DescribeImageAsync(image, token);
         return response;
     }
 }

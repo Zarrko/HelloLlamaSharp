@@ -4,5 +4,5 @@ namespace HelloLlamaSharp.Application.Services;
 
 public interface IDescribeImageService
 {
-    Task<string> DescribeImage(DescribeImage image, CancellationToken token = default);
+    Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default);
 }

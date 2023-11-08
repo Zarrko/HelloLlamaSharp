@@ -19,7 +19,7 @@ public static class DescribeImageEndpoint
             ) =>
             {
                 var describeImage = request.MapDescribeImageRequestToDomain();
-                var response = await describeImageService.DescribeImage(describeImage, cancellationToken);
+                var response = await describeImageService.DescribeImageAsync(describeImage, cancellationToken);
         
                 var describeImageResponse = new DescribeImageResponse { Description = response };
                 return TypedResults.CreatedAtRoute(value: describeImageResponse, DescribeImageEndpoint.Name, new { id = 12 });

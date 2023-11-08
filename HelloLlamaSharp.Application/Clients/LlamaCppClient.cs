@@ -13,7 +13,7 @@ public class LlamaCppClient : ILlamaCppClient
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<string> DescribeImage(DescribeImage image, CancellationToken token = default)
+    public async Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
     {
         var client = _httpClientFactory.CreateClient(ClientsConstants.LlamaApi);
         var jsonRequest = JsonSerializer.Serialize(image);
