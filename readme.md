@@ -47,6 +47,7 @@ Start the server (server options detailed [here](https://github.com/ggerganov/ll
 <br>
 <br>
 <br>
+
 # Launch HelloLlamaSharp
 
 Clone the repo, install all the dependencies and run the dotnet project
