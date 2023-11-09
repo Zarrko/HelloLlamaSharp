@@ -1,3 +1,4 @@
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using HelloLlamaSharp.Application.Domain;
@@ -13,7 +14,7 @@ public class LlamaCppClient : ILlamaCppClient
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
+    public async Task<ImageDescription> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
     {
         var client = _httpClientFactory.CreateClient(ClientsConstants.LlamaApi);
         var jsonRequest = JsonSerializer.Serialize(image);
@@ -24,13 +25,18 @@ public class LlamaCppClient : ILlamaCppClient
 
         try
         {
+            var defaultDescription = new ImageDescription { Description = "" };
             using var response = await client.SendAsync(httpRequestMessage, token);
-            var responseBody = await response.Content.ReadAsStringAsync(token);
-            return responseBody;
+            
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadFromJsonAsync<ImageDescription>(cancellationToken: token) ?? defaultDescription;
+            }
+            return defaultDescription;
         }
         catch (HttpRequestException ex)
         {
-            // ToDo: Handle better -- return a 400 back to request 
+            // ToDo: Handle better -- return a 500 back to request.
             throw;
         }
     }

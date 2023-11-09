@@ -1,8 +1,9 @@
 using HelloLlamaSharp.Application.Domain;
+using HelloLlamaSharp.Contracts.Responses;
 
 namespace HelloLlamaSharp.Application.Services;
 
 public interface IDescribeImageService
 {
-    Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default);
+    Task<ImageDescription> DescribeImageAsync(DescribeImage image, CancellationToken token = default);
 }

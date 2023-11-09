@@ -8,7 +8,7 @@ public class DescribeImage
     public string Prompt => "USER:[img-12]Describe the image in detail.\nASSISTANT:";
     
     [JsonPropertyName("n_predict")]
-    public int NPredict => 128;
+    public int NPredict => 512;
     
     [JsonPropertyName("image_data")]
     public List<ImageData> ImageData { get; set; }

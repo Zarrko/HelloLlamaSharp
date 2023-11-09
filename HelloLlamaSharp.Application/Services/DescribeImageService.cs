@@ -1,5 +1,6 @@
 using HelloLlamaSharp.Application.Clients;
 using HelloLlamaSharp.Application.Domain;
+using HelloLlamaSharp.Contracts.Responses;
 
 namespace HelloLlamaSharp.Application.Services;
 
@@ -13,9 +14,8 @@ public class DescribeImageService : IDescribeImageService
     }
 
 
-    public Task<string> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
+    public Task<ImageDescription> DescribeImageAsync(DescribeImage image, CancellationToken token = default)
     {
-        var response = _llamaCppClient.DescribeImageAsync(image, token);
-        return response;
+        return _llamaCppClient.DescribeImageAsync(image, token);
     }
 }

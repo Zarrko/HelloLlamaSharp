@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace HelloLlamaSharp.Contracts.Responses;
+namespace HelloLlamaSharp.Application.Domain;
 
-public class DescribeImageResponse
+public class ImageDescription
 {
     [JsonPropertyName("content")]
     public required string Description { get; init; }
